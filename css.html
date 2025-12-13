@@ -1,0 +1,194 @@
+<style>
+  ::-ms-reveal {
+    display: none;
+  }
+
+  img {
+    caret-color: transparent;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .divider {
+    width: 100%;
+    height: 3.5rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .divider+div {
+    min-height: calc(100vh - 3.5rem);
+  }
+
+  .bd-mode-toggle:not(#navbar *) {
+    z-index: 1040;
+  }
+
+  #bd-theme:not(#navbar *),
+  #navbar {
+    --bs-bg-opacity: .4;
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  #usernameInput.borderRadiusTop {
+    border-radius: .375rem .375rem 0 0;
+  }
+
+  #passwordInput.borderRadiusBottomLeft {
+    border-radius: 0 0 0 .375rem;
+  }
+
+  #eyeButton.borderRadiusBottomRight {
+    border-radius: 0 0 .375rem 0;
+  }
+
+  .input-group:has(> .form-floating > #passwordInput) {
+    margin: -1px 0 0 0;
+  }
+
+  #homeHeading,
+  #profileHeading,
+  #resumeHeading {
+    height: 3.5rem;
+    text-shadow: 0 0 1rem #fff;
+    z-index: 1040;
+  }
+
+  #profileMusicRow,
+  #profileMusicCollapseRow,
+  #profileMoviesRow,
+  #profileMoviesCollapseRow {
+    .card {
+      margin: 1.5rem .75rem;
+
+      .borderRadiusTop {
+        border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
+      }
+
+      .card-title {
+        width: calc(100% - (.5rem + 38px));
+      }
+
+      .card-title+.btn {
+        width: 38px;
+        height: 38px;
+      }
+    }
+  }
+
+  #profileMusicRow~.backgroundGradientLeft,
+  #profileMusicCollapseRow~.backgroundGradientLeft,
+  #profileMoviesRow~.backgroundGradientLeft,
+  #profileMoviesCollapseRow~.backgroundGradientLeft {
+    background: linear-gradient(to left, rgba(var(--bs-body-bg-rgb), 0), rgba(var(--bs-body-bg-rgb), 1));
+    width: .75rem;
+    height: calc(100% - 1.5rem);
+  }
+
+  #profileMusicRow~.backgroundGradientRight,
+  #profileMusicCollapseRow~.backgroundGradientRight,
+  #profileMoviesRow~.backgroundGradientRight,
+  #profileMoviesCollapseRow~.backgroundGradientRight {
+    background: linear-gradient(to right, rgba(var(--bs-body-bg-rgb), 0), rgba(var(--bs-body-bg-rgb), 1));
+    width: .75rem;
+    height: calc(100% - 1.5rem);
+  }
+
+  #profileOthersRow {
+    .borderRadiusLeft {
+      border-radius: 1rem 0 0 1rem;
+
+      .card.borderRadiusLeft {
+        border-radius: calc(1rem - 1px) 0 0 calc(1rem - 1px);
+      }
+    }
+
+    .borderRadiusRight {
+      border-radius: 0 1rem 1rem 0;
+
+      .card.borderRadiusTopRight {
+        border-radius: 0 calc(1rem - 1px) 0 0;
+      }
+
+      .card.borderRadiusBottomRight {
+        border-radius: 0 0 calc(1rem - 1px) 0;
+      }
+    }
+
+    .borderRadiusTop {
+      border-radius: 1rem 1rem 0 0;
+
+      .card.borderRadiusTop {
+        border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
+      }
+    }
+
+    .borderRadiusBottom {
+      border-radius: 0 0 1rem 1rem;
+
+      .card.borderRadiusBottom {
+        border-radius: 0 0 calc(1rem - 1px) calc(1rem - 1px);
+      }
+    }
+  }
+
+  .objectPositionTop {
+    object-position: top;
+  }
+
+  .objectPositionBottom {
+    object-position: bottom;
+  }
+
+  #resumeRow {
+    .borderRadius {
+      border-radius: 1rem;
+
+      .card.borderRadiusLeft {
+        border-radius: calc(1rem - 1px) 0 0 calc(1rem - 1px);
+      }
+
+      .card.borderRadiusRight {
+        border-radius: 0 calc(1rem - 1px) calc(1rem - 1px) 0;
+      }
+
+      .card.borderRadiusTopLeft {
+        border-radius: calc(1rem - 1px) 0 0 0;
+      }
+
+      .card.borderRadiusTopRight {
+        border-radius: 0 calc(1rem - 1px) 0 0;
+      }
+
+      .card.borderRadiusBottomLeft {
+        border-radius: 0 0 0 calc(1rem - 1px);
+      }
+
+      .card.borderRadiusBottomRight {
+        border-radius: 0 0 calc(1rem - 1px) 0;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    div:has(> #profileMusicRow, > #profileMusicCollapseRow, > #profileMoviesRow, > #profileMoviesCollapseRow) {
+      overflow-x: auto;
+    }
+
+    #profileMusicRow,
+    #profileMusicCollapseRow,
+    #profileMoviesRow,
+    #profileMoviesCollapseRow {
+      margin: 0 -1.5rem 0 0;
+
+      .card .card-text {
+        max-height: 30vh;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,203 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+</script>
+<script>
+  "use strict";
+
+  const URL_IMAGE_VERTICAL_LOGO = "https://github.com/ryo-hozumi/portfolio/blob/main/images/vertical-logo-green.png?raw=true";
+
+  const URL_SITE_GOOGLE_FORMS_CONTACT = "https://docs.google.com/forms/d/e/1FAIpQLSdKCjvvbo4tYCFw5I0XINitEEM5Xrigh7ZbwZcSCjDEkeWiyw/viewform?usp=header";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const signinFormEl = document.getElementById("signinForm");
+    const signinImageEl = document.getElementById("signinImage");
+
+    const usernameInputEl = document.getElementById("usernameInput");
+    const passwordInputEl = document.getElementById("passwordInput");
+    const eyeButtonEl = document.getElementById("eyeButton");
+
+    const submitButtonEl = document.getElementById("submitButton");
+
+    const errorModalEl = document.getElementById("errorModal");
+    const errorModal = new bootstrap.Modal(errorModalEl);
+    const errorModalTitleEl = document.getElementById("errorModalTitle");
+    const errorModalBodyEl = document.getElementById("errorModalBody");
+
+    const contactEl = document.getElementById("contact");
+
+    const alertIcon = `<svg class="bi flex-shrink-0 me-2" width="1em" height="1em"><use href="#exclamation-triangle-fill"></use></svg>`;
+    const eyeIcon = `<svg class="bi" width="1em" height="1em"><use href="#eye"></use></svg>`;
+    const eyeSlashIcon = `<svg class="bi" width="1em" height="1em"><use href="#eye-slash"></use></svg>`;
+    const externalLinkIcon = `<svg class="bi mx-2" width="1em" height="1em"><use href="#box-arrow-up-right"></use></svg>`;
+
+    /*!
+     * Color mode toggler for Bootstrap"s docs (https://getbootstrap.com/)
+     * Copyright 2011-2023 The Bootstrap Authors
+     * Licensed under the Creative Commons Attribution 3.0 Unported License.
+     */
+    const toggleColorMode = () => {
+      const getStoredTheme = () => localStorage.getItem("theme");
+      const setStoredTheme = theme => localStorage.setItem("theme", theme);
+
+      const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme) {
+          return storedTheme;
+        }
+
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+
+      const setTheme = theme => {
+        if (theme === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.setAttribute("data-bs-theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-bs-theme", theme);
+        }
+      }
+
+      setTheme(getPreferredTheme());
+
+      const showActiveTheme = (theme, focus = false) => {
+        const themeSwitcher = document.querySelector("#bd-theme");
+
+        if (!themeSwitcher) {
+          return;
+        }
+
+        const themeSwitcherText = document.querySelector("#bd-theme-text");
+        const activeThemeIcon = document.querySelector(".theme-icon-active use");
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+        const svgOfActiveBtn = btnToActive.querySelector("svg use").getAttribute("href");
+
+        document.querySelectorAll("[data-bs-theme-value]").forEach(element => {
+          element.classList.remove("active");
+          element.setAttribute("aria-pressed", "false");
+        });
+
+        btnToActive.classList.add("active");
+        btnToActive.setAttribute("aria-pressed", "true");
+        activeThemeIcon.setAttribute("href", svgOfActiveBtn);
+        const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`;
+        themeSwitcher.setAttribute("aria-label", themeSwitcherLabel);
+
+        if (focus) {
+          themeSwitcher.focus();
+        }
+      }
+
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme !== "light" && storedTheme !== "dark") {
+          setTheme(getPreferredTheme());
+        }
+      });
+
+      showActiveTheme(getPreferredTheme());
+
+      document.querySelectorAll("[data-bs-theme-value]").forEach(toggle => {
+        toggle.addEventListener("click", () => {
+          const theme = toggle.getAttribute("data-bs-theme-value");
+          setStoredTheme(theme);
+          setTheme(theme);
+          showActiveTheme(theme, true);
+        });
+      });
+    }
+
+    const initializeFormContent = () => {
+      if (signinImageEl) {
+        signinImageEl.src = URL_IMAGE_VERTICAL_LOGO;
+        signinImageEl.alt = "Portfolio Logo";
+        signinImageEl.width = "150";
+        signinImageEl.height = "192";
+      }
+
+      if (eyeButtonEl && passwordInputEl) {
+        eyeButtonEl.insertAdjacentHTML("beforeend", eyeIcon);
+
+        eyeButtonEl.addEventListener("click", () => {
+          if (passwordInputEl.type === "password") {
+            eyeButtonEl.innerHTML = eyeSlashIcon;
+            passwordInputEl.type = "text";
+          } else {
+            eyeButtonEl.innerHTML = eyeIcon;
+            passwordInputEl.type = "password";
+          }
+        });
+      }
+
+      if (errorModalTitleEl) {
+        errorModalTitleEl.insertAdjacentHTML("afterbegin", alertIcon);
+      }
+
+      if (contactEl) {
+        const html = `<a target="_blank" href="${URL_SITE_GOOGLE_FORMS_CONTACT}">Contact${externalLinkIcon}</a>`;
+
+        contactEl.insertAdjacentHTML("beforeend", html);
+      }
+    }
+
+    const verifyCredentialsAndSubmit = () => {
+      if (signinFormEl && submitButtonEl && usernameInputEl && passwordInputEl && errorModalBodyEl && errorModal && errorModalEl) {
+        signinFormEl.addEventListener("submit", (event) => {
+          event.preventDefault();
+          submitButtonEl.innerHTML = `
+            <div class="d-flex justify-content-center align-items-center flex-wrap mx-2 column-gap-2">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              <span>Loading...</span>
+            </div>
+          `;
+          submitButtonEl.disabled = true;
+          (async () => {
+            try {
+              const isVerified = await new Promise((resolve, reject) => {
+                google.script.run
+                  .withSuccessHandler(resolve)
+                  .withFailureHandler(reject)
+                  .verifyCredentials(usernameInputEl.value, passwordInputEl.value);
+              });
+
+              if (isVerified) {
+                signinFormEl.submit();
+                return;
+              }
+              errorModalBodyEl.textContent = "ユーザー名またはパスワードが正しくありません。入力し直してください。";
+              errorModal.show();
+            } catch (error) {
+              errorModalBodyEl.textContent = "エラーが発生しました。もう一度お試しください。";
+              errorModal.show();
+              console.error(error);
+            }
+          })();
+        });
+
+        errorModalEl.addEventListener("show.bs.modal", () => {
+          submitButtonEl.innerHTML = `<div class="mx-2">Sign in</div>`;
+          submitButtonEl.disabled = false;
+        });
+      }
+    }
+
+    const fetchAndLogVisitorData = async () => {
+      try {
+        const response = await fetch("https://ipinfo.io/json");
+        const data = response.ok ? await response.json() : { response_status: response.status };
+
+        await new Promise((resolve, reject) => {
+          google.script.run
+            .withSuccessHandler(resolve)
+            .withFailureHandler(reject)
+            .logVisitorData("Sign in - Portfolio", data);
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    toggleColorMode();
+    initializeFormContent();
+    verifyCredentialsAndSubmit();
+    fetchAndLogVisitorData();
+  });
+</script>

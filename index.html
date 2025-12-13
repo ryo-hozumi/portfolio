@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja" data-bs-theme="auto">
+
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="このWebサイトは、保住 亮のポートフォリオサイトです。Google Apps Script (GAS) のHTMLサービス、Bootstrapのフレームワークを使用して制作しました。">
+  <meta name="author" content="Ryo Hozumi">
+  <meta name="generator" content="Google Apps Script">
+  <title>Sign in - Portfolio | Ryo Hozumi</title>
+  <link rel="canonical" href="<?= ScriptApp.getService().getUrl(); ?>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <?!= HtmlService.createHtmlOutputFromFile("css").getContent(); ?>
+</head>
+
+<body class="d-flex align-items-center py-4 bg-body-tertiary vh-100">
+  <?!= HtmlService.createHtmlOutputFromFile("svg").getContent(); ?>
+  <div class="dropdown position-fixed top-0 end-0 mt-4 me-4 bd-mode-toggle rounded shadow">
+    <button class="btn btn-link dropdown-toggle d-flex align-items-center bg-dark text-light" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active me-2" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          <span>Light</span>
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          <span>Dark</span>
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          <span>Auto</span>
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <main class="w-100 m-auto px-4 py-5">
+    <div class="col-sm-5 col-md-4 col-lg-3 mx-auto">
+      <form action="<?= ScriptApp.getService().getUrl(); ?>" method="post" id="signinForm">
+        <div class="text-center">
+          <img class="mb-4 img-fluid" id="signinImage">
+        </div>
+        <h1 class="h3 mb-3 fw-normal text-body-emphasis">Sign in</h1>
+        <div class="input-group">
+          <div class="form-floating">
+            <input type="text" class="form-control borderRadiusTop" id="usernameInput" name="username" placeholder="ユーザー名" title="ユーザー名" required>
+            <label class="text-truncate w-100" for="usernameInput">ユーザー名</label>
+          </div>
+          <div class="input-group">
+            <div class="form-floating">
+              <input type="password" class="form-control borderRadiusBottomLeft" id="passwordInput" name="password" placeholder="パスワード" title="パスワード" required>
+              <label class="text-truncate w-100" for="passwordInput">パスワード</label>
+            </div>
+            <button class="btn btn-outline-secondary borderRadiusBottomRight" type="button" id="eyeButton"></button>
+          </div>
+        </div>
+        <hr class="my-4">
+        <button class="btn btn-primary w-100 py-2" type="submit" id="submitButton">
+          <div class="mx-2">Sign in</div>
+        </button>
+        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content bg-danger-subtle border-danger-subtle">
+              <div class="modal-header border-danger-subtle">
+                <h1 class="modal-title fs-5 text-danger-emphasis d-flex align-items-center" id="errorModalTitle">Error
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-danger-emphasis" id="errorModalBody"></div>
+            </div>
+          </div>
+        </div>
+        <p class="mt-5 mb-3 text-body-secondary">
+          <span class="text-nowrap">&copy; 2025 </span>
+          <span>Ryo Hozumi &middot; </span>
+          <span class="text-nowrap" id="contact"></span>
+        </p>
+      </form>
+    </div>
+  </main>
+  <?!= HtmlService.createHtmlOutputFromFile("index-js").getContent(); ?>
+</body>
+
+</html>

@@ -1,0 +1,1089 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+</script>
+<script>
+  "use strict";
+
+  const URL_IMAGE_SYMBOL = "https://github.com/ryo-hozumi/portfolio/blob/main/images/symbol-white.png?raw=true";
+  const URL_IMAGE_VERTICAL_LOGO = "https://github.com/ryo-hozumi/portfolio/blob/main/images/vertical-logo-green.png?raw=true";
+  const URL_IMAGE_HORIZONTAL_LOGO = "https://github.com/ryo-hozumi/portfolio/blob/main/images/horizontal-logo-green.png?raw=true";
+  const URL_IMAGE_GUITAR = "https://github.com/ryo-hozumi/portfolio/blob/main/images/profile-others-guitar.png?raw=true";
+  const URL_IMAGE_WHISKEY = "https://github.com/ryo-hozumi/portfolio/blob/main/images/profile-others-whiskey.png?raw=true";
+  const URL_IMAGE_COFFEE = "https://github.com/ryo-hozumi/portfolio/blob/main/images/profile-others-coffee.png?raw=true";
+  const URL_IMAGE_MARINE_MAMMALS = "https://github.com/ryo-hozumi/portfolio/blob/main/images/profile-others-marine-mammals.png?raw=true";
+  const URL_IMAGE_MOUNTAIN = "https://github.com/ryo-hozumi/portfolio/blob/main/images/profile-others-mountain.png?raw=true";
+  const URL_IMAGE_T_CUBE = "https://github.com/ryo-hozumi/portfolio/blob/main/images/resume-t-cube.png?raw=true";
+  const URL_IMAGE_INSECT = "https://github.com/ryo-hozumi/portfolio/blob/main/images/resume-insect.png?raw=true";
+  const URL_IMAGE_HAIR = "https://github.com/ryo-hozumi/portfolio/blob/main/images/resume-hair.png?raw=true";
+  const URL_IMAGE_PLASTIC = "https://github.com/ryo-hozumi/portfolio/blob/main/images/resume-plastic.png?raw=true";
+  const URL_IMAGE_METAL = "https://github.com/ryo-hozumi/portfolio/blob/main/images/resume-metal.png?raw=true";
+  const URL_IMAGE_VBA_LOGO = "https://github.com/ryo-hozumi/portfolio/blob/main/images/resume-vba.png?raw=true";
+  const URL_IMAGE_GAS_LOGO = "https://github.com/ryo-hozumi/portfolio/blob/main/images/resume-gas.png?raw=true";
+  const URL_IMAGE_PYTHON_LOGO = "https://github.com/ryo-hozumi/portfolio/blob/main/images/resume-python.png?raw=true";
+
+  const URL_SITE_GAS = "https://developers.google.com/apps-script?hl=ja";
+  const URL_SITE_BOOTSTRAP = "https://getbootstrap.jp/";
+  const URL_SITE_GITHUB = "https://github.com/ryo-hozumi/portfolio.git";
+  const URL_SITE_EARTH_ENVIRONMENTAL_SERVICE = "https://www.earth-kankyo.co.jp/";
+  const URL_SITE_GOOGLE_FORMS_CONTACT = "https://docs.google.com/forms/d/e/1FAIpQLSdKCjvvbo4tYCFw5I0XINitEEM5Xrigh7ZbwZcSCjDEkeWiyw/viewform?usp=header";
+
+  const URL_SITE_WIKIPEDIA_TOMMY_EMMANUEL = "https://ja.wikipedia.org/w/index.php?title=%E3%83%88%E3%83%9F%E3%83%BC%E3%83%BB%E3%82%A8%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A8%E3%83%AB&oldid=106914836";
+  const URL_SITE_WIKIPEDIA_PAT_METHENY = "https://ja.wikipedia.org/w/index.php?title=%E3%83%91%E3%83%83%E3%83%88%E3%83%BB%E3%83%A1%E3%82%BB%E3%83%8B%E3%83%BC&oldid=107555012";
+  const URL_SITE_WIKIPEDIA_LEE_RITENOUR = "https://ja.wikipedia.org/w/index.php?title=%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%AA%E3%83%88%E3%83%8A%E3%83%BC&oldid=107350881";
+  const URL_SITE_WIKIPEDIA_JOE_PASS = "https://ja.wikipedia.org/w/index.php?title=%E3%82%B8%E3%83%A7%E3%83%BC%E3%83%BB%E3%83%91%E3%82%B9&oldid=104582419";
+  const URL_SITE_WIKIPEDIA_PIERRE_BENSUSAN = "https://ja.wikipedia.org/w/index.php?title=%E3%83%94%E3%82%A8%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%99%E3%83%B3%E3%82%B9%E3%83%BC%E3%82%B6%E3%83%B3&oldid=90686629";
+  const URL_SITE_WIKIPEDIA_DON_ROSS = "https://en.wikipedia.org/w/index.php?title=Don_Ross_(guitarist)&oldid=1321858073";
+  const URL_SITE_WIKIPEDIA_LIFE = "https://ja.wikipedia.org/w/index.php?title=LIFE!/%E3%83%A9%E3%82%A4%E3%83%95&oldid=106824790";
+  const URL_SITE_WIKIPEDIA_JOKER = "https://ja.wikipedia.org/w/index.php?title=%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%AB%E3%83%BC_(%E6%98%A0%E7%94%BB)&oldid=107173309";
+  const URL_SITE_WIKIPEDIA_GREEN_BOOK = "https://ja.wikipedia.org/w/index.php?title=%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%96%E3%83%83%E3%82%AF_(%E6%98%A0%E7%94%BB)&oldid=107064506";
+  const URL_SITE_WIKIPEDIA_THE_DEVIL_WEARS_PRADA = "https://ja.wikipedia.org/w/index.php?title=%E3%83%97%E3%83%A9%E3%83%80%E3%82%92%E7%9D%80%E3%81%9F%E6%82%AA%E9%AD%94&oldid=107476405";
+  const URL_SITE_WIKIPEDIA_GUITAR = "https://commons.wikimedia.org/w/index.php?curid=17947655";
+  const URL_SITE_WIKIPEDIA_WHISKEY = "https://commons.wikimedia.org/w/index.php?curid=145287117";
+  const URL_SITE_WIKIPEDIA_COFFEE = "https://commons.wikimedia.org/w/index.php?curid=107645";
+  const URL_SITE_WIKIPEDIA_MARINE_MAMMALS = "https://commons.wikimedia.org/w/index.php?curid=151593904";
+  const URL_SITE_WIKIPEDIA_MOUNTAIN = "https://commons.wikimedia.org/w/index.php?curid=5250254";
+  const URL_SITE_WIKIPEDIA_INSECT = "https://commons.wikimedia.org/w/index.php?curid=453584";
+  const URL_SITE_WIKIPEDIA_HAIR = "https://commons.wikimedia.org/w/index.php?curid=1407026";
+  const URL_SITE_WIKIPEDIA_PLASTIC = "https://commons.wikimedia.org/w/index.php?curid=863767";
+  const URL_SITE_WIKIPEDIA_METAL = "https://commons.wikimedia.org/w/index.php?curid=1111544";
+
+  const URL_SITE_YOUTUBE_TOMMY_EMMANUEL = "https://www.youtube-nocookie.com/embed/sb2VwqLC8IY?si=8J6uReSVEqR1Pbc0";
+  const URL_SITE_YOUTUBE_PAT_METHENY = "https://www.youtube-nocookie.com/embed/m-4t43dXn3o?si=EcORlFJdt_xoUh1H";
+  const URL_SITE_YOUTUBE_LEE_RITENOUR = "https://www.youtube-nocookie.com/embed/Pu5K5xySiis?si=V9hrtwBt7eDpX3PV";
+  const URL_SITE_YOUTUBE_JOE_PASS = "https://www.youtube-nocookie.com/embed/QjaCpmXJs7k?si=87K8m-J2fdoN48wr";
+  const URL_SITE_YOUTUBE_PIERRE_BENSUSAN = "https://www.youtube-nocookie.com/embed/pQiwZ-bu7qo?si=nPM6CP2H17sNr7rw";
+  const URL_SITE_YOUTUBE_DON_ROSS = "https://www.youtube-nocookie.com/embed/mKofEPTs__Q?si=XDw3HOv1Z6UWkJPT";
+  const URL_SITE_YOUTUBE_LIFE = "https://www.youtube-nocookie.com/embed/SGmgGYyd9T8?si=WD6dIyaOWxh7ox3_";
+  const URL_SITE_YOUTUBE_JOKER = "https://www.youtube-nocookie.com/embed/C3nQcMM5fS4?si=pYgvBCME5uYcTOuJ";
+  const URL_SITE_YOUTUBE_GREEN_BOOK = "https://www.youtube-nocookie.com/embed/awUd_khNEcc?si=9CAbWVpj-aDbXMXN";
+  const URL_SITE_YOUTUBE_THE_DEVIL_WEARS_PRADA = "https://www.youtube-nocookie.com/embed/4_NBNiy776A?si=RavF1xS94kdhl5i1";
+  const URL_SITE_YOUTUBE_SUFFIX = "&rel=0";
+
+  const ID_PROFILE_MUSIC_CARD1 = "profileMusicCard1";
+  const ID_PROFILE_MUSIC_CARD2 = "profileMusicCard2";
+  const ID_PROFILE_MUSIC_CARD3 = "profileMusicCard3";
+  const ID_PROFILE_MUSIC_COLLAPSE_CARD1 = "profileMusicCollapseCard1";
+  const ID_PROFILE_MUSIC_COLLAPSE_CARD2 = "profileMusicCollapseCard2";
+  const ID_PROFILE_MUSIC_COLLAPSE_CARD3 = "profileMusicCollapseCard3";
+  const ID_PROFILE_MOVIES_CARD1 = "profileMoviesCard1";
+  const ID_PROFILE_MOVIES_CARD2 = "profileMoviesCard2";
+  const ID_PROFILE_MOVIES_COLLAPSE_CARD1 = "profileMoviesCollapseCard1"
+  const ID_PROFILE_MOVIES_COLLAPSE_CARD2 = "profileMoviesCollapseCard2";
+  const ID_PROFILE_OTHERS_MODAL_CARD1 = "profileOthersModalCard1";
+  const ID_PROFILE_OTHERS_MODAL_CARD2 = "profileOthersModalCard2";
+  const ID_PROFILE_OTHERS_MODAL_CARD3 = "profileOthersModalCard3";
+  const ID_PROFILE_OTHERS_MODAL_CARD4 = "profileOthersModalCard4";
+  const ID_PROFILE_OTHERS_MODAL_CARD5 = "profileOthersModalCard5";
+  const ID_RESUME_MODAL_CARD1 = "resumeModalCard1";
+  const ID_RESUME_MODAL_CARD2 = "resumeModalCard2";
+  const ID_RESUME_MODAL_CARD3 = "resumeModalCard3";
+  const ID_RESUME_MODAL_CARD4 = "resumeModalCard4";
+  const ID_RESUME_MODAL_CARD5 = "resumeModalCard5";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const headerImageEl = document.getElementById("headerImage");
+    const navbarContainerEl = document.querySelector("#navbar .container");
+    const accountEl = document.getElementById("account");
+    const themeSwitcherDropdownMenuEl = document.querySelector("#bd-theme+.dropdown-menu");
+    const mediaQueryList = window.matchMedia("(min-width: 992px)");
+
+    const homeImageEl = document.getElementById("homeImage");
+    const homeLeadEl = document.getElementById("homeLead");
+    const homeButtonEl = document.getElementById("homeButton");
+
+    const profileRowEl = document.getElementById("profileRow");
+    const profileMusicGenresEl = document.getElementById("profileMusicGenres");
+    const profileMusicRowEl = document.getElementById("profileMusicRow");
+    const profileMusicCollapseEl = document.getElementById("profileMusicCollapse");
+    const profileMusicCollapseRowEl = document.getElementById("profileMusicCollapseRow");
+    const profileMovieGenresEl = document.getElementById("profileMovieGenres");
+    const profileMoviesRowEl = document.getElementById("profileMoviesRow");
+    const profileMoviesCollapseEl = document.getElementById("profileMoviesCollapse");
+    const profileMoviesCollapseRowEl = document.getElementById("profileMoviesCollapseRow");
+    const profileOtherTitlesEl = document.getElementById("profileOtherTitles");
+    const profileOthersRowEl = document.getElementById("profileOthersRow");
+
+    const resumeKeywordsEl = document.getElementById("resumeKeywords");
+    const resumeRowEl = document.getElementById("resumeRow");
+    const resumeSkillsEl = document.getElementById("resumeSkills");
+
+    const footerImageEl = document.getElementById("footerImage");
+    const contactEl = document.getElementById("contact");
+
+    const profileIcon = `<svg class="bi flex-shrink-0 me-2" width="24" height="24"><use href="#person-circle"></use></svg>`;
+    const externalLinkIcon = `<svg class="bi mx-2" width="1em" height="1em"><use href="#box-arrow-up-right"></use></svg>`;
+    const gitIcon = `<svg class="bi mx-2" width="1em" height="1em"><use href="#github"></use></svg>`;
+    const chevronDownIcon = `<svg class="bi position-absolute top-50 start-50 translate-middle" width="1em" height="1em"><use href="#chevron-down"></use></svg>`;
+    const chevronUpIcon = `<svg class="bi position-absolute top-50 start-50 translate-middle" width="1em" height="1em"><use href="#chevron-up"></use></svg>`;
+
+    const getDataBsTargetEl = (id) => document.querySelector(`[data-bs-target="#${id}"]`);
+    const changeChevronUpIcon = (id) => getDataBsTargetEl(id).innerHTML = chevronUpIcon;
+    const changeChevronDownIcon = (id) => getDataBsTargetEl(id).innerHTML = chevronDownIcon;
+    const changeShowLessText = (id) => getDataBsTargetEl(id).children[0].textContent = "Show less";
+    const changeShowMoreText = (id) => getDataBsTargetEl(id).children[0].textContent = "Show more";
+    
+    /*!
+     * Color mode toggler for Bootstrap"s docs (https://getbootstrap.com/)
+     * Copyright 2011-2023 The Bootstrap Authors
+     * Licensed under the Creative Commons Attribution 3.0 Unported License.
+     */
+    const toggleColorMode = () => {
+      const getStoredTheme = () => localStorage.getItem("theme");
+      const setStoredTheme = theme => localStorage.setItem("theme", theme);
+
+      const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme) {
+          return storedTheme;
+        }
+
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+
+      const setTheme = theme => {
+        if (theme === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.setAttribute("data-bs-theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-bs-theme", theme);
+        }
+      }
+
+      setTheme(getPreferredTheme());
+
+      const showActiveTheme = (theme, focus = false) => {
+        const themeSwitcher = document.querySelector("#bd-theme");
+
+        if (!themeSwitcher) {
+          return;
+        }
+
+        const themeSwitcherText = document.querySelector("#bd-theme-text");
+        const activeThemeIcon = document.querySelector(".theme-icon-active use");
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+        const svgOfActiveBtn = btnToActive.querySelector("svg use").getAttribute("href");
+
+        document.querySelectorAll("[data-bs-theme-value]").forEach(element => {
+          element.classList.remove("active");
+          element.setAttribute("aria-pressed", "false");
+        });
+
+        btnToActive.classList.add("active");
+        btnToActive.setAttribute("aria-pressed", "true");
+        activeThemeIcon.setAttribute("href", svgOfActiveBtn);
+        const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`;
+        themeSwitcher.setAttribute("aria-label", themeSwitcherLabel);
+
+        if (focus) {
+          themeSwitcher.focus();
+        }
+      }
+
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+        const storedTheme = getStoredTheme();
+        if (storedTheme !== "light" && storedTheme !== "dark") {
+          setTheme(getPreferredTheme());
+        }
+      });
+
+      showActiveTheme(getPreferredTheme());
+
+      document.querySelectorAll("[data-bs-theme-value]").forEach(toggle => {
+        toggle.addEventListener("click", () => {
+          const theme = toggle.getAttribute("data-bs-theme-value");
+          setStoredTheme(theme);
+          setTheme(theme);
+          showActiveTheme(theme, true);
+        });
+      });
+    }
+
+    const initializeHeaderContent = () => {
+      if (headerImageEl) {
+        headerImageEl.src = URL_IMAGE_SYMBOL;
+        headerImageEl.alt = "Portfolio Top";
+        headerImageEl.title = "Portfolio Top";
+        headerImageEl.width = "32";
+        headerImageEl.height = "32";
+      }
+      if (navbarContainerEl && accountEl && themeSwitcherDropdownMenuEl) {
+        const resizeObserver = new ResizeObserver((entries) => {
+          for (const entry of entries) {
+            accountEl.style.maxWidth = mediaQueryList.matches ? "8rem" : `${entry.contentRect.width}px`;
+            themeSwitcherDropdownMenuEl.style.minWidth = mediaQueryList.matches ? "10rem" : `${entry.contentRect.width}px`;
+          }
+        });
+
+        resizeObserver.observe(navbarContainerEl);
+        accountEl.insertAdjacentHTML("afterbegin", profileIcon);
+      }
+    }
+
+    const initializeHomeContent = () => {
+      if (homeImageEl) {
+        homeImageEl.src = URL_IMAGE_VERTICAL_LOGO;
+        homeImageEl.alt = "Portfolio Logo";
+        homeImageEl.width = "150";
+        homeImageEl.height = "192";
+      }
+      if (homeLeadEl) {
+        const html = `このWebサイトは、保住 亮のポートフォリオサイトです。<br><a target="_blank" href="${URL_SITE_GAS}">Google Apps Script (GAS)${externalLinkIcon}</a>のHTMLサービス、<a target="_blank" href="${URL_SITE_BOOTSTRAP}">Bootstrap${externalLinkIcon}</a>のフレームワークを使用して制作しました。`;
+
+        homeLeadEl.insertAdjacentHTML("beforeend", html);
+      }
+      if (homeButtonEl) {
+        const html = `<a class="btn btn-outline-secondary btn-lg px-4 rounded-pill" target="_blank" href="${URL_SITE_GITHUB}" role="button">${gitIcon}GitHub${externalLinkIcon}</a>`;
+
+        homeButtonEl.insertAdjacentHTML("beforeend", html);
+      }
+    }
+
+    const initializeProfileContent = () => {
+      if (profileRowEl) {
+        const profileMap = (() => {
+          const map = new Map();
+
+          map.set("名前", `保住 亮<span class="d-none d-md-inline"> </span><br class="d-md-none">(ホズミ リョウ)`);
+          map.set("現住所", "大阪府箕面市");
+          map.set("生年月日", "1992年5月1日");
+          map.set("性格", `<span class="text-nowrap">探究心、</span><span class="text-nowrap">論理的、</span><span class="text-nowrap">責任感</span>`);
+          return map;
+        })();
+
+        profileMap.forEach((value, key) => {
+          const html = `
+            <div class="col-6">
+              <p class="lead mb-0 text-end">${key}</p>
+            </div>
+            <div class="col-6">
+              <p class="lead mb-0 text-start">${value}</p>
+            </div>
+          `;
+
+          profileRowEl.insertAdjacentHTML("beforeend", html);
+        });
+      }
+      if (profileMusicGenresEl) {
+        const musicGenresArray = ["カントリー", "ジャズ", "フュージョン", "ニューエイジ"];
+
+        musicGenresArray.forEach((element, index) => {
+          const html = (() => {
+            if (index < musicGenresArray.length - 1) {
+              element += "・";
+            }
+            return `<span class="text-nowrap">${element}</span>`;
+          })();
+
+          profileMusicGenresEl.insertAdjacentHTML("beforeend", html);
+        });
+      }
+      if (profileMusicRowEl) {
+        const musicCardMap = (() => {
+          const map = new Map();
+
+          map.set(ID_PROFILE_MUSIC_CARD1, {
+            video: `<iframe src="${URL_SITE_YOUTUBE_TOMMY_EMMANUEL}${URL_SITE_YOUTUBE_SUFFIX}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" class="position-absolute top-50 start-50 translate-middle borderRadiusTop"></iframe>`,
+            title: "Tommy Emmanuel",
+            text: "トミー・エマニュエル (1955年5月31日 - ) は、オーストラリアのギタリスト。ニューサウスウェールズ州出身。グラミー賞に2回ノミネートされた『フィンガーピッキングの達人』として有名で、今までに、チェット・アトキンス、レス・ポール、エリック・クラプトンなど数々の有名なギタリストと共演を果たしている。兄のフィル・エマニュエルもオーストラリアで著名なギタリストであり、時折兄弟でセッションを行う事がある。シドニーオリンピックの開会式でもフィルと共に演奏を披露している。",
+            source: `Wikipedia contributors. (2025, October 21). トミー・エマニュエル. In <cite title="Wikipedia">Wikipedia</cite>. Retrieved from <a target="_blank" href="${URL_SITE_WIKIPEDIA_TOMMY_EMMANUEL}">${URL_SITE_WIKIPEDIA_TOMMY_EMMANUEL}${externalLinkIcon}</a>`
+          });
+          map.set(ID_PROFILE_MUSIC_CARD2, {
+            video: `<iframe src="${URL_SITE_YOUTUBE_PAT_METHENY}${URL_SITE_YOUTUBE_SUFFIX}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" class="position-absolute top-50 start-50 translate-middle borderRadiusTop"></iframe>`,
+            title: "Pat Metheny",
+            text: "パット・メセニー (1954年8月12日 - ) は、アメリカ合衆国出身のジャズ・ギタリスト。また、自身が率いるパット・メセニー・グループのリーダーでもある。ミズーリ州リーズ・サミット生まれ。兄にジャズ・トランペッターのマイク・メセニーがいる。なお、本人を含めて英語圏での名前の発音は第二音節にアクセントを置いた「メシーニー」に近い。",
+            source: `Wikipedia contributors. (2025, December 11). パット・メセニー. In <cite title="Wikipedia">Wikipedia</cite>. Retrieved from <a target="_blank" href="${URL_SITE_WIKIPEDIA_PAT_METHENY}">${URL_SITE_WIKIPEDIA_PAT_METHENY}${externalLinkIcon}</a>`
+          });
+          map.set(ID_PROFILE_MUSIC_CARD3, {
+            video: `<iframe src="${URL_SITE_YOUTUBE_LEE_RITENOUR}${URL_SITE_YOUTUBE_SUFFIX}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" class="position-absolute top-50 start-50 translate-middle borderRadiusTop"></iframe>`,
+            title: "Lee Ritenour",
+            text: "リー・リトナー (1952年1月11日 - ) とは、アメリカ合衆国のジャズギタリスト。西海岸カリフォルニア州ハリウッド生まれ。ジャズ・フュージョンのジャンルで、1970年代前半より活動している。ブラジリアン･リズムを取り入れたアルバムもリリースした。",
+            source: `Wikipedia contributors. (2025, November 24). リー・リトナー. In <cite title="Wikipedia">Wikipedia</cite>. Retrieved from <a target="_blank" href="${URL_SITE_WIKIPEDIA_LEE_RITENOUR}">${URL_SITE_WIKIPEDIA_LEE_RITENOUR}${externalLinkIcon}</a>`
+          });
+          return map;
+        })();
+
+        musicCardMap.forEach((value, key) => {
+          const html = `
+            <div class="col-md-5 px-0">
+              <div class="card overflow-hidden bg-body-tertiary rounded-4 shadow-sm">
+                <div class="ratio ratio-1x1 position-relative">
+                  ${value.video}
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center gap-2">
+                    <h5 class="card-title text-truncate mb-0 text-start" title="${value.title}">${value.title}</h5>
+                    <button class="btn btn-primary rounded-circle position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#${key}" aria-expanded="false" aria-controls="${key}">
+                      ${chevronDownIcon}
+                    </button>
+                  </div>
+                  <div class="collapse" id="${key}">
+                    <figure class="card-text bg-body rounded overflow-y-auto mt-2 p-3 text-start">
+                      <blockquote class="blockquote">
+                        <p class="fs-6">${value.text}</p>
+                      </blockquote>
+                      <figcaption class="blockquote-footer mb-0">
+                        ${value.source}
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+
+          profileMusicRowEl.insertAdjacentHTML("beforeend", html);
+          document.getElementById(key).addEventListener("show.bs.collapse", () => changeChevronUpIcon(key));
+          document.getElementById(key).addEventListener("hide.bs.collapse", () => changeChevronDownIcon(key));
+        });
+      }
+      if (profileMusicCollapseEl) {
+        profileMusicCollapseEl.addEventListener("show.bs.collapse", (event) => {
+          if (profileMusicCollapseEl.id === event.target.id) {
+            changeShowLessText(event.target.id);
+          }
+        });
+        profileMusicCollapseEl.addEventListener("hide.bs.collapse", (event) => {
+          if (profileMusicCollapseEl.id === event.target.id) {
+            changeShowMoreText(event.target.id);
+          }
+        });
+      }
+      if (profileMusicCollapseRowEl) {
+        const musicCollapseCardMap = (() => {
+          const map = new Map();
+
+          map.set(ID_PROFILE_MUSIC_COLLAPSE_CARD1, {
+            video: `<iframe src="${URL_SITE_YOUTUBE_JOE_PASS}${URL_SITE_YOUTUBE_SUFFIX}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" class="position-absolute top-50 start-50 translate-middle borderRadiusTop"></iframe>`,
+            title: "Joe Pass",
+            text: "ジョー・パス (1929年1月13日 - 1994年5月23日) は、アメリカ合衆国のジャズ・ミュージシャン、ギタリスト。我流ではあるが、卓越した超絶技巧を誇り後進のギタリストに多大な影響を与えている。オスカー・ピーターソンやエラ・フィッツジェラルドといった大御所との録音も多い。",
+            source: `Wikipedia contributors. (2025, April 22). ジョー・パス. In <cite title="Wikipedia">Wikipedia</cite>. Retrieved from <a target="_blank" href="${URL_SITE_WIKIPEDIA_JOE_PASS}">${URL_SITE_WIKIPEDIA_JOE_PASS}${externalLinkIcon}</a>`
+          });
+          map.set(ID_PROFILE_MUSIC_COLLAPSE_CARD2, {
+            video: `<iframe src="${URL_SITE_YOUTUBE_PIERRE_BENSUSAN}${URL_SITE_YOUTUBE_SUFFIX}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" class="position-absolute top-50 start-50 translate-middle borderRadiusTop"></iframe>`,
+            title: "Pierre Bensusan",
+            text: "ピエール・ベンスーザン (1957年10月30日 - ) は、アルジェリア系フランス人のギタリスト。元々はスペインからアルジェリアへ移民してきたユダヤ人の一家に生まれ、後にアルジェリア独立戦争の騒乱から逃れフランスのパリに育つ。",
+            source: `Wikipedia contributors. (2022, July 27). ピエール・ベンスーザン. In <cite title="Wikipedia">Wikipedia</cite>. Retrieved from <a target="_blank" href="${URL_SITE_WIKIPEDIA_PIERRE_BENSUSAN}">${URL_SITE_WIKIPEDIA_PIERRE_BENSUSAN}${externalLinkIcon}</a>`
+          });
+          map.set(ID_PROFILE_MUSIC_COLLAPSE_CARD3, {
+            video: `<iframe src="${URL_SITE_YOUTUBE_DON_ROSS}${URL_SITE_YOUTUBE_SUFFIX}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" class="position-absolute top-50 start-50 translate-middle borderRadiusTop"></iframe>`,
+            title: "Don Ross",
+            text: "ドン・ロス (1960年11月19日 - ) は、カナダ出身のフィンガースタイル・ギタリストである。彼は、全米フィンガースタイル・ギター選手権で2度 (1988年と1996年) 優勝した最初のギタリストである。彼のアルバム「Huron Street」は、ビルボード・ニューエイジ・チャートのトップ10にランクインした。",
+            source: `Wikipedia contributors. (2025, November 13). ドン・ロス. In <cite title="Wikipedia">Wikipedia</cite>. Retrieved from <a target="_blank" href="${URL_SITE_WIKIPEDIA_DON_ROSS}">${URL_SITE_WIKIPEDIA_DON_ROSS}${externalLinkIcon}</a>`
+          });
+          return map;
+        })();
+
+        musicCollapseCardMap.forEach((value, key) => {
+          const html = `
+            <div class="col-md-5 px-0">
+              <div class="card overflow-hidden bg-body-tertiary rounded-4 shadow-sm">
+                <div class="ratio ratio-1x1 position-relative">
+                  ${value.video}
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center gap-2">
+                    <h5 class="card-title text-truncate mb-0 text-start" title="${value.title}">${value.title}</h5>
+                    <button class="btn btn-primary rounded-circle position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#${key}" aria-expanded="false" aria-controls="${key}">
+                      ${chevronDownIcon}
+                    </button>
+                  </div>
+                  <div class="collapse" id="${key}">
+                    <figure class="card-text bg-body rounded overflow-y-auto mt-2 p-3 text-start">
+                      <blockquote class="blockquote">
+                        <p class="fs-6">${value.text}</p>
+                      </blockquote>
+                      <figcaption class="blockquote-footer mb-0">
+                        ${value.source}
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+
+          profileMusicCollapseRowEl.insertAdjacentHTML("beforeend", html);
+          document.getElementById(key).addEventListener("show.bs.collapse", () => changeChevronUpIcon(key));
+          document.getElementById(key).addEventListener("hide.bs.collapse", () => changeChevronDownIcon(key));
+        });
+      }
+      if (profileMovieGenresEl) {
+        const movieGenresArray = ["冒険", "コメディ", "ドラマ", "スリラー", "伝記"];
+
+        movieGenresArray.forEach((element, index) => {
+          const html = (() => {
+            if (index < movieGenresArray.length - 1) {
+              element += "・";
+            }
+            return `<span class="text-nowrap">${element}</span>`;
+          })();
+
+          profileMovieGenresEl.insertAdjacentHTML("beforeend", html);
+        });
+      }
+      if (profileMoviesRowEl) {
+        const moviesCardMap = (() => {
+          const map = new Map();
+
+          map.set(ID_PROFILE_MOVIES_CARD1, {
+            video: `<iframe src="${URL_SITE_YOUTUBE_LIFE}${URL_SITE_YOUTUBE_SUFFIX}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" class="position-absolute top-50 start-50 translate-middle borderRadiusTop"></iframe>`,
+            title: "LIFE!",
+            text: `『ライフ』 (原題: <i>The Secret Life of Walter Mitty</i>) は、2013年のアメリカのアドベンチャー・コメディ・ドラマ映画。監督・共同製作・主演をベン・スティラー、脚本はスティーヴ・コンラッドが務め、クリステン・ウィグ、シャーリー・マクレーン、アダム・スコットらが出演する。`,
+            source: `Wikipedia contributors. (2025, October 13). LIFE!/ライフ. In <cite title="Wikipedia">Wikipedia</cite>. Retrieved from <a target="_blank" href="${URL_SITE_WIKIPEDIA_LIFE}">${URL_SITE_WIKIPEDIA_LIFE}${externalLinkIcon}</a>`
+          });
+          map.set(ID_PROFILE_MOVIES_CARD2, {
+            video: `<iframe src="${URL_SITE_YOUTUBE_JOKER}${URL_SITE_YOUTUBE_SUFFIX}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" class="position-absolute top-50 start-50 translate-middle borderRadiusTop"></iframe>`,
+            title: "Joker",
+            text: `『ジョーカー』 (原題: <i>Joker</i>) は、DCコミックス「バットマン」シリーズに登場するスーパーヴィランであるジョーカーをベースとした、2019年のアメリカのサイコスリラー映画。監督はトッド・フィリップス、脚本はフィリップスとスコット・シルヴァーが務め、ホアキン・フェニックス、ロバート・デ・ニーロ、ザジー・ビーツ、フランセス・コンロイらが出演した。R15+指定。`,
+            source: `Wikipedia contributors. (2025, November 9). ジョーカー (映画). In <cite title="Wikipedia">Wikipedia</cite>. Retrieved from <a target="_blank" href="${URL_SITE_WIKIPEDIA_JOKER}">${URL_SITE_WIKIPEDIA_JOKER}${externalLinkIcon}</a>`
+          });
+          return map;
+        })();
+
+        moviesCardMap.forEach((value, key) => {
+          const html = `
+            <div class="col-md-8 px-0">
+              <div class="card overflow-hidden bg-body-tertiary rounded-4 shadow-sm">
+                <div class="ratio ratio-16x9 position-relative">
+                  ${value.video}
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center gap-2">
+                    <h5 class="card-title text-truncate mb-0 text-start" title="${value.title}">${value.title}</h5>
+                    <button class="btn btn-primary rounded-circle position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#${key}" aria-expanded="false" aria-controls="${key}">
+                      ${chevronDownIcon}
+                    </button>
+                  </div>
+                  <div class="collapse" id="${key}">
+                    <figure class="card-text bg-body rounded overflow-y-auto mt-2 p-3 text-start">
+                      <blockquote class="blockquote">
+                        <p class="fs-6">${value.text}</p>
+                      </blockquote>
+                      <figcaption class="blockquote-footer mb-0">
+                        ${value.source}
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          `;
+
+          profileMoviesRowEl.insertAdjacentHTML("beforeend", html);
+          document.getElementById(key).addEventListener("show.bs.collapse", () => changeChevronUpIcon(key));
+          document.getElementById(key).addEventListener("hide.bs.collapse", () => changeChevronDownIcon(key));
+        });
+      }
+      if (profileMoviesCollapseEl) {
+        profileMoviesCollapseEl.addEventListener("show.bs.collapse", (event) => {
+          if (profileMoviesCollapseEl.id === event.target.id) {
+            changeShowLessText(event.target.id);
+          }
+        });
+        profileMoviesCollapseEl.addEventListener("hide.bs.collapse", (event) => {
+          if (profileMoviesCollapseEl.id === event.target.id) {
+            changeShowMoreText(event.target.id);
+          }
+        });
+      }
+      if (profileMoviesCollapseRowEl) {
+        const moviesCollapseCardMap = (() => {
+          const map = new Map();
+
+          map.set(ID_PROFILE_MOVIES_COLLAPSE_CARD1, {
+            video: `<iframe src="${URL_SITE_YOUTUBE_GREEN_BOOK}${URL_SITE_YOUTUBE_SUFFIX}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" class="position-absolute top-50 start-50 translate-middle borderRadiusTop"></iframe>`,
+            title: "Green Book",
+            text: `『グリーンブック』 (原題: <i>Green Book</i>) は、2018年のアメリカ合衆国の伝記ヒューマン映画。アフリカ系アメリカ人のクラシック及びジャズピアニストであるドン"ドクター"シャーリーと、シャーリーの運転手兼ボディガードを務めたイタリア系アメリカ人のバウンサー、トニー・ヴァレロンガによって1962年に実際に行われたアメリカ最南部を回るコンサートツアーにインスパイアされた作品である。`,
+            source: `Wikipedia contributors. (2025, November 2). グリーンブック (映画). In <cite title="Wikipedia">Wikipedia</cite>. Retrieved from <a target="_blank" href="${URL_SITE_WIKIPEDIA_GREEN_BOOK}">${URL_SITE_WIKIPEDIA_GREEN_BOOK}${externalLinkIcon}</a>`
+          });
+          map.set(ID_PROFILE_MOVIES_COLLAPSE_CARD2, {
+            video: `<iframe src="${URL_SITE_YOUTUBE_THE_DEVIL_WEARS_PRADA}${URL_SITE_YOUTUBE_SUFFIX}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" class="position-absolute top-50 start-50 translate-middle borderRadiusTop"></iframe>`,
+            title: "The Devil Wears Prada",
+            text: `『プラダを着た悪魔』 (原題: <i>The Devil Wears Prada</i>) とは、2003年4月に刊行されたローレン・ワイズバーガーによるアメリカ合衆国の小説作品、及び2006年に公開されたアメリカ映画。`,
+            source: `Wikipedia contributors. (2025, December 4). プラダを着た悪魔. In <cite title="Wikipedia">Wikipedia</cite>. Retrieved from <a target="_blank" href="${URL_SITE_WIKIPEDIA_THE_DEVIL_WEARS_PRADA}">${URL_SITE_WIKIPEDIA_THE_DEVIL_WEARS_PRADA}${externalLinkIcon}</a>`
+          });
+          return map;
+        })();
+
+        moviesCollapseCardMap.forEach((value, key) => {
+          const html = `
+            <div class="col-md-8 px-0">
+              <div class="card overflow-hidden bg-body-tertiary rounded-4 shadow-sm">
+                <div class="ratio ratio-16x9 position-relative">
+                  ${value.video}
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center gap-2">
+                    <h5 class="card-title text-truncate mb-0 text-start" title="${value.title}">${value.title}</h5>
+                    <button class="btn btn-primary rounded-circle position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#${key}" aria-expanded="false" aria-controls="${key}">
+                      ${chevronDownIcon}
+                    </button>
+                  </div>
+                  <div class="collapse" id="${key}">
+                    <figure class="card-text bg-body rounded overflow-y-auto mt-2 p-3 text-start">
+                      <blockquote class="blockquote">
+                        <p class="fs-6">${value.text}</p>
+                      </blockquote>
+                      <figcaption class="blockquote-footer mb-0">
+                        ${value.source}
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+
+          profileMoviesCollapseRowEl.insertAdjacentHTML("beforeend", html);
+          document.getElementById(key).addEventListener("show.bs.collapse", () => changeChevronUpIcon(key));
+          document.getElementById(key).addEventListener("hide.bs.collapse", () => changeChevronDownIcon(key));
+        });
+      }
+      if (profileOtherTitlesEl) {
+        const otherTitlesArray = ["ギター", "ウイスキー", "コーヒー", "海獣", "山"];
+
+        otherTitlesArray.forEach((element, index) => {
+          const html = (() => {
+            if (index < otherTitlesArray.length - 1) {
+              element += "・";
+            }
+            return `<span class="text-nowrap">${element}</span>`;
+          })();
+
+          profileOtherTitlesEl.insertAdjacentHTML("beforeend", html);
+        });
+      }
+      if (profileOthersRowEl) {
+        const othersImageMap = (() => {
+          const map = new Map();
+
+          map.set("guitar", {
+            src: URL_IMAGE_GUITAR,
+            alt: "代表的なエレクトリックギターの1つ、フェンダー・ストラトキャスター",
+            title: "代表的なエレクトリックギターの1つ、フェンダー・ストラトキャスター"
+          });
+          map.set("whiskey", {
+            src: URL_IMAGE_WHISKEY,
+            alt: "ダンネージ式の熟成庫",
+            title: "ダンネージ式の熟成庫"
+          });
+          map.set("coffee", {
+            src: URL_IMAGE_COFFEE,
+            alt: "カップに淹れられたコーヒーの写真。",
+            title: "カップに淹れられたコーヒーの写真。"
+          });
+          map.set("marine_mammals", {
+            src: URL_IMAGE_MARINE_MAMMALS,
+            alt: "水面から飛び出すブリーチング",
+            title: "水面から飛び出すブリーチング"
+          });
+          map.set("mountain", {
+            src: URL_IMAGE_MOUNTAIN,
+            alt: "富士見岳からご来光と雲海",
+            title: "富士見岳からご来光と雲海"
+          });
+          return map;
+        })();
+
+        const html1 = `
+          <div class="col-md-3 border border-end-0 d-none d-md-block shadow-sm borderRadiusLeft">
+            <div class="card h-100 overflow-hidden bg-body-tertiary border-0 borderRadiusLeft">
+              <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_PROFILE_OTHERS_MODAL_CARD1}">
+                <img src="${othersImageMap.get("guitar").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${othersImageMap.get("guitar").alt}" title="${othersImageMap.get("guitar").title}" draggable="false">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 border border-start-0 d-none d-md-block shadow-sm borderRadiusRight">
+            <div class="row row-cols-1 g-0">
+              <div class="col">
+                <div class="card h-100 overflow-hidden bg-body-tertiary border-0 borderRadiusTopRight">
+                  <div class="ratio ratio-21x9">
+                    <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_PROFILE_OTHERS_MODAL_CARD2}">
+                      <img src="${othersImageMap.get("whiskey").src}" class="card-img-top rounded-0 object-fit-cover h-100 objectPositionTop" alt="${othersImageMap.get("whiskey").alt}" title="${othersImageMap.get("whiskey").title}" draggable="false">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row row-cols-2 g-0">
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary rounded-0 border-0">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_PROFILE_OTHERS_MODAL_CARD3}">
+                          <img src="${othersImageMap.get("coffee").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${othersImageMap.get("coffee").alt}" title="${othersImageMap.get("coffee").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary rounded-0 border-0">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_PROFILE_OTHERS_MODAL_CARD4}">
+                          <img src="${othersImageMap.get("marine_mammals").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${othersImageMap.get("marine_mammals").alt}" title="${othersImageMap.get("marine_mammals").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 overflow-hidden bg-body-tertiary border-0 borderRadiusBottomRight">
+                  <div class="ratio ratio-21x9">
+                    <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_PROFILE_OTHERS_MODAL_CARD5}">
+                      <img src="${othersImageMap.get("mountain").src}" class="card-img-top rounded-0 object-fit-cover h-100 objectPositionBottom" alt="${othersImageMap.get("mountain").alt}" title="${othersImageMap.get("mountain").title}" draggable="false">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        const html2 = `
+          <div class="col border border-bottom-0 d-md-none shadow-sm borderRadiusTop">
+            <div class="card h-100 overflow-hidden bg-body-tertiary border-0 borderRadiusTop">
+              <div class="ratio ratio-1x1">
+                <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_PROFILE_OTHERS_MODAL_CARD1}">
+                  <img src="${othersImageMap.get("guitar").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${othersImageMap.get("guitar").alt}" title="${othersImageMap.get("guitar").title}" draggable="false">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col border border-top-0 d-md-none shadow-sm borderRadiusBottom">
+            <div class="row row-cols-1 g-0">
+              <div class="col">
+                <div class="card h-100 overflow-hidden bg-body-tertiary rounded-0 border-0">
+                  <div class="ratio ratio-21x9">
+                    <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_PROFILE_OTHERS_MODAL_CARD2}">
+                      <img src="${othersImageMap.get("whiskey").src}" class="card-img-top rounded-0 object-fit-cover h-100 objectPositionTop" alt="${othersImageMap.get("whiskey").alt}" title="${othersImageMap.get("whiskey").title}" draggable="false">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row row-cols-2 g-0">
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary rounded-0 border-0">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_PROFILE_OTHERS_MODAL_CARD3}">
+                          <img src="${othersImageMap.get("coffee").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${othersImageMap.get("coffee").alt}" title="${othersImageMap.get("coffee").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary rounded-0 border-0">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_PROFILE_OTHERS_MODAL_CARD4}">
+                          <img src="${othersImageMap.get("marine_mammals").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${othersImageMap.get("marine_mammals").alt}" title="${othersImageMap.get("marine_mammals").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 overflow-hidden bg-body-tertiary border-0 borderRadiusBottom">
+                  <div class="ratio ratio-21x9">
+                    <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_PROFILE_OTHERS_MODAL_CARD5}">
+                      <img src="${othersImageMap.get("mountain").src}" class="card-img-top rounded-0 object-fit-cover h-100 objectPositionBottom" alt="${othersImageMap.get("mountain").alt}" title="${othersImageMap.get("mountain").title}" draggable="false">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        profileOthersRowEl.insertAdjacentHTML("beforeend", `${html1}${html2}`);
+
+        const othersModalMap = (() => {
+          const map = new Map();
+
+          map.set(ID_PROFILE_OTHERS_MODAL_CARD1, {
+            title: "ギター",
+            image: `<div class="ratio ratio-1x1"><img src="${othersImageMap.get("guitar").src}" class="object-fit-contain" alt="${othersImageMap.get("guitar").alt}" title="${othersImageMap.get("guitar").title}" draggable="false"></div>`,
+            text: `${othersImageMap.get("guitar").title}`,
+            author: "Martin Taylor",
+            source: `www.flickr.com, CC 表示-継承 2.0, <a target="_blank" href="${URL_SITE_WIKIPEDIA_GUITAR}">${URL_SITE_WIKIPEDIA_GUITAR}${externalLinkIcon}</a>`
+          });
+          map.set(ID_PROFILE_OTHERS_MODAL_CARD2, {
+            title: "ウイスキー",
+            image: `<div class="ratio ratio-4x3"><img src="${othersImageMap.get("whiskey").src}" class="object-fit-contain" alt="${othersImageMap.get("whiskey").alt}" title="${othersImageMap.get("whiskey").title}" draggable="false"></div>`,
+            text: `${othersImageMap.get("whiskey").title}`,
+            author: "Toukou Sousui 淙穂鶫箜",
+            source: `www.flickr.com/photos/sousui/8990941920/, CC 表示 2.0, <a target="_blank" href="${URL_SITE_WIKIPEDIA_WHISKEY}">${URL_SITE_WIKIPEDIA_WHISKEY}${externalLinkIcon}</a>`
+          });
+          map.set(ID_PROFILE_OTHERS_MODAL_CARD3, {
+            title: "コーヒー",
+            image: `<div class="ratio ratio-4x3"><img src="${othersImageMap.get("coffee").src}" class="object-fit-contain" alt="${othersImageMap.get("coffee").alt}" title="${othersImageMap.get("coffee").title}" draggable="false"></div>`,
+            text: `${othersImageMap.get("coffee").title}`,
+            author: "Julius Schorzman",
+            source: `投稿者自身による著作物, CC 表示-継承 2.0, <a target="_blank" href="${URL_SITE_WIKIPEDIA_COFFEE}">${URL_SITE_WIKIPEDIA_COFFEE}${externalLinkIcon}</a>`
+          });
+          map.set(ID_PROFILE_OTHERS_MODAL_CARD4, {
+            title: "海獣",
+            image: `<div class="ratio ratio-4x3"><img src="${othersImageMap.get("marine_mammals").src}" class="object-fit-contain" alt="${othersImageMap.get("marine_mammals").alt}" title="${othersImageMap.get("marine_mammals").title}" draggable="false"></div>`,
+            text: `${othersImageMap.get("marine_mammals").title}`,
+            author: "NOAA Fisheries",
+            source: `www.fisheries.noaa.gov/feature-story/limiting-chinook-fishing-low-return-years-help-killer-whales-what-do-you-think, パブリック・ドメイン, <a target="_blank" href="${URL_SITE_WIKIPEDIA_MARINE_MAMMALS}">${URL_SITE_WIKIPEDIA_MARINE_MAMMALS}${externalLinkIcon}</a>`
+          });
+          map.set(ID_PROFILE_OTHERS_MODAL_CARD5, {
+            title: "山",
+            image: `<div class="ratio ratio-4x3"><img src="${othersImageMap.get("mountain").src}" class="object-fit-contain" alt="${othersImageMap.get("mountain").alt}" title="${othersImageMap.get("mountain").title}" draggable="false"></div>`,
+            text: `${othersImageMap.get("mountain").title}`,
+            author: "Akiyoshi's Room",
+            source: `Akiyoshi's Room, パブリック・ドメイン, <a target="_blank" href="${URL_SITE_WIKIPEDIA_MOUNTAIN}">${URL_SITE_WIKIPEDIA_MOUNTAIN}${externalLinkIcon}</a>`
+          });
+          return map;
+        })();
+
+        othersModalMap.forEach((value, key) => {
+          const html = `
+            <div class="modal fade" id="${key}" tabindex="-1" aria-labelledby="${key}Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-start" id="${key}Label">${value.title}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body p-0">
+                    ${value.image}
+                  </div>
+                  <div class="modal-footer d-flex justify-content-start">
+                    <figure class="text-start text-break">
+                      <blockquote class="blockquote">
+                        <h2 class="fs-5">${value.text}</h2>
+                        <p class="fs-6">${value.author}</p>
+                      </blockquote>
+                      <figcaption class="blockquote-footer mb-0">
+                        ${value.source}
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+
+          profileOthersRowEl.insertAdjacentHTML("beforeend", html);
+        });
+      }
+    }
+
+    const initializeResumeContent = () => {
+      if (resumeKeywordsEl) {
+        const keywordsArray = [
+          { text: "アース環境サービス株式会社", backgroundColor: "bg-primary-subtle", color: "text-primary-emphasis" },
+          { text: "チーフ (係長級)", backgroundColor: "bg-primary-subtle", color: "text-primary-emphasis" },
+          { text: "異物同定検査", backgroundColor: "bg-primary-subtle", color: "text-primary-emphasis" },
+          { text: "技術指導", backgroundColor: "bg-primary-subtle", color: "text-primary-emphasis" },
+          { text: "マネジメント", backgroundColor: "bg-primary-subtle", color: "text-primary-emphasis" },
+          { text: "VBA", backgroundColor: "bg-secondary-subtle", color: "text-secondary-emphasis" },
+          { text: "GAS", backgroundColor: "bg-secondary-subtle", color: "text-secondary-emphasis" },
+          { text: "JavaScript", backgroundColor: "bg-secondary-subtle", color: "text-secondary-emphasis" },
+          { text: "HTML", backgroundColor: "bg-secondary-subtle", color: "text-secondary-emphasis" },
+          { text: "Bootstrap", backgroundColor: "bg-secondary-subtle", color: "text-secondary-emphasis" },
+          { text: "Python", backgroundColor: "bg-secondary-subtle", color: "text-secondary-emphasis" },
+          { text: "業務自動化", backgroundColor: "bg-secondary-subtle", color: "text-secondary-emphasis" },
+          { text: "納期管理", backgroundColor: "bg-secondary-subtle", color: "text-secondary-emphasis" },
+          { text: "開発・運用・保守", backgroundColor: "bg-secondary-subtle", color: "text-secondary-emphasis" },
+          { text: "要件定義", backgroundColor: "bg-secondary-subtle", color: "text-secondary-emphasis" }
+        ];
+
+        keywordsArray.forEach((element) => {
+          const html = `<span class="badge rounded-pill ${element.backgroundColor} ${element.color} text-wrap fw-normal">${element.text}</span>`;
+
+          resumeKeywordsEl.insertAdjacentHTML("beforeend", html);
+        });
+      }
+      if (resumeRowEl) {
+        const resumeImageMap = (() => {
+          const map = new Map();
+
+          map.set("t-cube", {
+            src: URL_IMAGE_T_CUBE,
+            alt: "彩都総合研究所 (大阪府茨木市)",
+            title: "彩都総合研究所 (大阪府茨木市)"
+          });
+          map.set("insect", {
+            src: URL_IMAGE_INSECT,
+            alt: "ナナホシテントウ",
+            title: "ナナホシテントウ"
+          });
+          map.set("hair", {
+            src: URL_IMAGE_HAIR,
+            alt: "200倍に拡大した髪の毛",
+            title: "200倍に拡大した髪の毛"
+          });
+          map.set("plastic", {
+            src: URL_IMAGE_PLASTIC,
+            alt: "発泡スチロール (EPS) 製の梱包材",
+            title: "発泡スチロール (EPS) 製の梱包材"
+          });
+          map.set("metal", {
+            src: URL_IMAGE_METAL,
+            alt: "ボールベアリング",
+            title: "ボールベアリング"
+          });
+          return map;
+        })();
+
+        const html1 = `
+          <div class="clearfix">
+            <div class="col-12 col-md-5 float-md-end mb-4 ms-md-4">
+              <div class="card overflow-hidden bg-body-tertiary rounded-4 shadow-sm">
+                <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_RESUME_MODAL_CARD1}">
+                  <img src="${resumeImageMap.get("t-cube").src}" class="card-img-top object-fit-cover h-100" alt="${resumeImageMap.get("t-cube").alt}" title="${resumeImageMap.get("t-cube").title}" draggable="false">
+                </a>
+              </div>
+            </div>
+            <h4 class="text-body-emphasis text-start">検査実務とマネジメント経験</h4>
+            <p class="lead mb-2 text-start">2013年に<a target="_blank" href="${URL_SITE_EARTH_ENVIRONMENTAL_SERVICE}">アース環境サービス株式会社${externalLinkIcon}</a>へ入社し、現在は分析部門のチーフ (係長級) を務めています。</p>
+            <p class="lead mb-4 text-start">食品・医薬品・包材など幅広い業界に対し、衛生環境の維持・改善サービスを提供する同社において、主に異物同定検査 (形態観察・機器分析) 及び検査報告書の最終承認業務に従事してきました。また、検査員の技術指導やセミナー講師、ISO規格の運用・監査対応などマネジメント業務も経験しています。</p>
+          </div>
+        `;
+
+        const html2 = `
+          <div>
+            <div class="row row-cols-1 g-0 mb-4">
+              <div class="col border d-none d-md-block shadow-sm borderRadius">
+                <div class="row row-cols-4 g-0">
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary border-0 borderRadiusLeft">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_RESUME_MODAL_CARD2}">
+                          <img src="${resumeImageMap.get("insect").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${resumeImageMap.get("insect").alt}" title="${resumeImageMap.get("insect").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary rounded-0 border-0">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_RESUME_MODAL_CARD3}">
+                          <img src="${resumeImageMap.get("hair").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${resumeImageMap.get("hair").alt}" title="${resumeImageMap.get("hair").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary rounded-0 border-0">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_RESUME_MODAL_CARD4}">
+                          <img src="${resumeImageMap.get("plastic").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${resumeImageMap.get("plastic").alt}" title="${resumeImageMap.get("plastic").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary border-0 borderRadiusRight">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_RESUME_MODAL_CARD5}">
+                          <img src="${resumeImageMap.get("metal").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${resumeImageMap.get("metal").alt}" title="${resumeImageMap.get("metal").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col border d-md-none shadow-sm borderRadius">
+                <div class="row row-cols-2 g-0">
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary border-0 borderRadiusTopLeft">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_RESUME_MODAL_CARD2}">
+                          <img src="${resumeImageMap.get("insect").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${resumeImageMap.get("insect").alt}" title="${resumeImageMap.get("insect").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary border-0 borderRadiusTopRight">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_RESUME_MODAL_CARD3}">
+                          <img src="${resumeImageMap.get("hair").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${resumeImageMap.get("hair").alt}" title="${resumeImageMap.get("hair").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row row-cols-2 g-0">
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary border-0 borderRadiusBottomLeft">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_RESUME_MODAL_CARD4}">
+                          <img src="${resumeImageMap.get("plastic").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${resumeImageMap.get("plastic").alt}" title="${resumeImageMap.get("plastic").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100 overflow-hidden bg-body-tertiary border-0 borderRadiusBottomRight">
+                      <div class="ratio ratio-1x1">
+                        <a class="h-100" role="button" data-bs-toggle="modal" data-bs-target="#${ID_RESUME_MODAL_CARD5}">
+                          <img src="${resumeImageMap.get("metal").src}" class="card-img-top rounded-0 object-fit-cover h-100" alt="${resumeImageMap.get("metal").alt}" title="${resumeImageMap.get("metal").title}" draggable="false">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h4 class="text-body-emphasis text-start">課題解決のツール開発・要件定義</h4>
+            <p class="lead mb-2 text-start">2020年からは分析業務と並行して、VBA・GASを用いた業務自動化ツールや納期管理アプリを自身で開発・運用・保守を行いました。これにより、ヒューマンエラーの低減、納期の短縮、残業時間の削減など大幅な業務効率化を実現しています。また、基幹システム更新プロジェクトにも参画し、要件定義などの上流工程にも携わりました。</p>
+            <p class="lead mb-4 pb-4 text-start">現在はITスキルを体系化するため、基本情報技術者試験の取得に向けて学習を続けています。</p>
+          </div>
+        `;
+
+        resumeRowEl.insertAdjacentHTML("beforeend", `${html1}${html2}`);
+
+        const resumeModalMap = (() => {
+          const map = new Map();
+
+          map.set(ID_RESUME_MODAL_CARD1, {
+            title: "アース環境サービス株式会社",
+            image: `<div class="ratio ratio-4x3"><img src="${resumeImageMap.get("t-cube").src}" class="object-fit-contain" alt="${resumeImageMap.get("t-cube").alt}" title="${resumeImageMap.get("t-cube").title}" draggable="false"></div>`,
+            text: `${resumeImageMap.get("t-cube").title}`,
+            author: "Earth Environmental Service Co., Ltd.",
+            source: `Earth Environmental Service Co., Ltd., <a target="_blank" href="${URL_SITE_EARTH_ENVIRONMENTAL_SERVICE}">${URL_SITE_EARTH_ENVIRONMENTAL_SERVICE}${externalLinkIcon}</a>`
+          });
+          map.set(ID_RESUME_MODAL_CARD2, {
+            title: "虫",
+            image: `<div class="ratio ratio-1x1"><img src="${resumeImageMap.get("insect").src}" class="object-fit-contain" alt="${resumeImageMap.get("insect").alt}" title="${resumeImageMap.get("insect").title}" draggable="false"></div>`,
+            text: `${resumeImageMap.get("insect").title}`,
+            author: "Dominik Stodulski (pandominik [at] interia.pl)",
+            source: `CC 表示-継承 3.0, <a target="_blank" href="${URL_SITE_WIKIPEDIA_INSECT}">${URL_SITE_WIKIPEDIA_INSECT}${externalLinkIcon}</a>`
+          });
+          map.set(ID_RESUME_MODAL_CARD3, {
+            title: "毛",
+            image: `<div class="ratio ratio-1x1"><img src="${resumeImageMap.get("hair").src}" class="object-fit-contain" alt="${resumeImageMap.get("hair").alt}" title="${resumeImageMap.get("hair").title}" draggable="false"></div>`,
+            text: `${resumeImageMap.get("hair").title}`,
+            author: "Jan Homann",
+            source: `www.haare-im-trend.info, パブリック・ドメイン, <a target="_blank" href="${URL_SITE_WIKIPEDIA_HAIR}">${URL_SITE_WIKIPEDIA_HAIR}${externalLinkIcon}</a>`
+          });
+          map.set(ID_RESUME_MODAL_CARD4, {
+            title: "プラスチック",
+            image: `<div class="ratio ratio-1x1"><img src="${resumeImageMap.get("plastic").src}" class="object-fit-contain" alt="${resumeImageMap.get("plastic").alt}" title="${resumeImageMap.get("plastic").title}" draggable="false"></div>`,
+            text: `${resumeImageMap.get("plastic").title}`,
+            author: "User:Acdx",
+            source: `投稿者自身による著作物, CC 表示-継承 3.0, <a target="_blank" href="${URL_SITE_WIKIPEDIA_PLASTIC}">${URL_SITE_WIKIPEDIA_PLASTIC}${externalLinkIcon}</a>`
+          });
+          map.set(ID_RESUME_MODAL_CARD5, {
+            title: "金属",
+            image: `<div class="ratio ratio-1x1"><img src="${resumeImageMap.get("metal").src}" class="object-fit-contain" alt="${resumeImageMap.get("metal").alt}" title="${resumeImageMap.get("metal").title}" draggable="false"></div>`,
+            text: `${resumeImageMap.get("metal").title}`,
+            author: "Solaris2006",
+            source: `投稿者自身による著作物, CC 表示-継承 3.0, <a target="_blank" href="${URL_SITE_WIKIPEDIA_METAL}">${URL_SITE_WIKIPEDIA_METAL}${externalLinkIcon}</a>`
+          });
+          return map;
+        })();
+
+        resumeModalMap.forEach((value, key) => {
+          const html = `
+            <div class="modal fade" id="${key}" tabindex="-1" aria-labelledby="${key}Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-start" id="${key}Label">${value.title}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body p-0">
+                    ${value.image}
+                  </div>
+                  <div class="modal-footer d-flex justify-content-start">
+                    <figure class="text-start text-break">
+                      <blockquote class="blockquote">
+                        <h2 class="fs-5">${value.text}</h2>
+                        <p class="fs-6">${value.author}</p>
+                      </blockquote>
+                      <figcaption class="blockquote-footer mb-0">
+                        ${value.source}
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+
+          resumeRowEl.insertAdjacentHTML("beforeend", html);
+        });
+      }
+      if (resumeSkillsEl) {
+        const resumeSkillsMap = (() => {
+          const map = new Map();
+
+          map.set("vba", {
+            title: "Visual Basic for Applications (VBA)",
+            image: `<div class="ratio ratio-16x9"><img src="${URL_IMAGE_VBA_LOGO}" class="bg-white rounded object-fit-contain p-2" alt="VBA Logo" draggable="false"></div>`,
+            list: `<li>バーコード生成</li><li>DB操作</li><li>帳票出力</li>`
+          });
+          map.set("gas", {
+            title: "Google Apps Script (GAS)",
+            image: `<div class="ratio ratio-16x9"><img src="${URL_IMAGE_GAS_LOGO}" class="bg-white rounded object-fit-contain p-2" alt="GAS Logo" draggable="false"></div>`,
+            list: `<li>メール作成</li><li>チャットボット運用</li><li>BIツール</li>`
+          });
+          map.set("python", {
+            title: "Python",
+            image: `<div class="ratio ratio-16x9"><img src="${URL_IMAGE_PYTHON_LOGO}" class="bg-white rounded object-fit-contain p-2" alt="Python Logo" draggable="false"></div>`,
+            list: `<li>Webスクレイピング</li><li>データ整形</li><li>API連携</li>`
+          });
+          return map;
+        })();
+
+        resumeSkillsMap.forEach((value) => {
+          const html = `
+            <div class="col-12 col-md-5">
+              ${value.image}
+            </div>
+            <div class="col-md-7 mt-4 mt-md-5 text-start">
+              <h4 class="text-body-emphasis">${value.title}</h4>
+              <ul class="lead mb-0">${value.list}</ul>
+            </div>
+          `;
+
+          resumeSkillsEl.insertAdjacentHTML("beforeend", html);
+        });
+      }
+    }
+
+    const initializeFooterContent = () => {
+      if (footerImageEl) {
+        footerImageEl.src = URL_IMAGE_HORIZONTAL_LOGO;
+        footerImageEl.alt = "Portfolio Logo";
+        footerImageEl.title = "Portfolio Top";
+        footerImageEl.width = "192";
+        footerImageEl.height = "65";
+      }
+      if (contactEl) {
+        const html = `<a target="_blank" href="${URL_SITE_GOOGLE_FORMS_CONTACT}">Contact${externalLinkIcon}</a>`;
+
+        contactEl.insertAdjacentHTML("beforeend", html);
+      }
+    }
+
+    const fetchAndLogVisitorData = async () => {
+      try {
+        const response = await fetch("https://ipinfo.io/json");
+        const data = response.ok ? await response.json() : { response_status: response.status };
+
+        await new Promise((resolve, reject) => {
+          google.script.run
+            .withSuccessHandler(resolve)
+            .withFailureHandler(reject)
+            .logVisitorData("Portfolio", data);
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    toggleColorMode();
+    initializeHeaderContent();
+    initializeHomeContent();
+    initializeProfileContent();
+    initializeResumeContent();
+    initializeFooterContent();
+    fetchAndLogVisitorData();
+  });
+</script>
