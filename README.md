@@ -8,7 +8,7 @@
   <br>
 </div>
 <div align="center">
-  <a target="_blank" href="https://script.google.com/macros/s/AKfycbyNLR3qpbAD5EHz-j_SxQIWm4wox_alM5mY5UCVNlJli2Zo8w02xrMNHNCCWn_FztSIXA/exec">
+  <a href="https://script.google.com/macros/s/AKfycbyNLR3qpbAD5EHz-j_SxQIWm4wox_alM5mY5UCVNlJli2Zo8w02xrMNHNCCWn_FztSIXA/exec">
     <strong>Webサイトを見る »</strong>
   </a>
   <br>
@@ -22,5 +22,5 @@
 </div>
 <div align="center">
   <span>&copy; 2025 Ryo Hozumi &middot; </span>
-  <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdKCjvvbo4tYCFw5I0XINitEEM5Xrigh7ZbwZcSCjDEkeWiyw/viewform?usp=header">Contact</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKCjvvbo4tYCFw5I0XINitEEM5Xrigh7ZbwZcSCjDEkeWiyw/viewform?usp=header">Contact</a>
 </div>
