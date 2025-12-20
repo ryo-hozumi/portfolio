@@ -1,8 +1,10 @@
 "use strict";
 
-function doGet() {
+function doGet(e) {
   const template = HtmlService.createTemplateFromFile("index");
 
+  template.username = e.parameter.username ?? "";
+  template.password = e.parameter.password ?? "";
   return template
     .evaluate()
     .addMetaTag("viewport", "width=device-width, initial-scale=1")

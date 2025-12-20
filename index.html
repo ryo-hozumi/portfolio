@@ -71,12 +71,12 @@
         <h1 class="h3 mb-3 fw-normal text-body-emphasis">Sign in</h1>
         <div class="input-group">
           <div class="form-floating">
-            <input type="text" class="form-control borderRadiusTop" id="usernameInput" name="username" placeholder="ユーザー名" title="ユーザー名" required>
+            <input type="text" class="form-control borderRadiusTop" id="usernameInput" name="username" value="<?= username ?>" placeholder="ユーザー名" title="ユーザー名" required>
             <label class="text-truncate w-100" for="usernameInput">ユーザー名</label>
           </div>
           <div class="input-group">
             <div class="form-floating">
-              <input type="password" class="form-control borderRadiusBottomLeft" id="passwordInput" name="password" placeholder="パスワード" title="パスワード" required>
+              <input type="password" class="form-control borderRadiusBottomLeft" id="passwordInput" name="password" value="<?= password ?>" placeholder="パスワード" title="パスワード" required>
               <label class="text-truncate w-100" for="passwordInput">パスワード</label>
             </div>
             <button class="btn btn-outline-secondary borderRadiusBottomRight" type="button" id="eyeButton"></button>
