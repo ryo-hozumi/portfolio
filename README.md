@@ -5,18 +5,11 @@
 <div align="center">
   <span>Google Apps Script (GAS) のHTMLサービス、Bootstrapのフレームワークを使用して制作。</span>
   <br>
-  <br>
 </div>
 <div align="center">
-  <a href="https://script.google.com/macros/s/AKfycbyNLR3qpbAD5EHz-j_SxQIWm4wox_alM5mY5UCVNlJli2Zo8w02xrMNHNCCWn_FztSIXA/exec">
+  <a href="https://script.google.com/macros/s/AKfycbyNLR3qpbAD5EHz-j_SxQIWm4wox_alM5mY5UCVNlJli2Zo8w02xrMNHNCCWn_FztSIXA/exec?username=user&password=45431542">
     <strong>Webサイトを見る »</strong>
   </a>
-  <br>
-  <br>
-</div>
-<div align="center">
-  <span>ユーザー名、パスワードは、転職・求人サイトを参照。</span>
-  <br>
   <br>
   <br>
 </div>
